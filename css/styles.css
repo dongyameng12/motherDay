@@ -1,0 +1,458 @@
+html,
+body {
+  background: -webkit-radial-gradient(circle, #efcea5, #f1bb7f);
+  /* Safari 5.1 - 6.0 */
+  background: -o-radial-gradient(circle, #efcea5, #f1bb7f);
+  /* Opera 11.6 - 12.0 */
+  background: -moz-radial-gradient(circle, #efcea5, #f1bb7f);
+  /* Firefox 3.6 - 15 */
+  background: radial-gradient(circle, #efcea5, #f1bb7f);
+  /* 标准的语法 */
+  height: 100%;
+  /* 遮罩层 */
+}
+html section.home > div:nth-child(1),
+body section.home > div:nth-child(1) {
+  width: 7.5rem;
+  height: 2.71rem;
+  background: url('../images/home_top.png') no-repeat;
+  background-size: cover;
+  position: relative;
+}
+html section.home > div:nth-child(1) > a,
+body section.home > div:nth-child(1) > a {
+  display: inline-block;
+  position: absolute;
+  top: .2rem;
+  right: 0;
+  width: 1.6rem;
+  height: .82rem;
+  background: url('../images/rule.png') no-repeat;
+  background-size: cover;
+}
+html section.home > div:nth-child(2),
+body section.home > div:nth-child(2) {
+  position: relative;
+  z-index: 1;
+  top: -0.6rem;
+}
+html section.home > div:nth-child(2) > div:nth-child(1),
+body section.home > div:nth-child(2) > div:nth-child(1) {
+  width: 7.5rem;
+  height: 8.88rem;
+}
+html section.home > div:nth-child(2) > div:nth-child(2),
+body section.home > div:nth-child(2) > div:nth-child(2) {
+  position: absolute;
+  left: 0;
+  top: 5.5rem;
+  width: 1.63rem;
+  height: 2.1rem;
+  background: url('../images/home_left.png') no-repeat;
+  background-size: cover;
+}
+html section.home > div:nth-child(2) > div:nth-child(3),
+body section.home > div:nth-child(2) > div:nth-child(3) {
+  position: absolute;
+  right: 0;
+  top: 4rem;
+  width: .91rem;
+  height: 1.44rem;
+  background: url('../images/home_rig.png') no-repeat;
+  background-size: cover;
+}
+html section.home > div:nth-child(3),
+body section.home > div:nth-child(3) {
+  width: 4.26rem;
+  height: 1.18rem;
+  background: url('../images/startx.png') no-repeat;
+  background-size: cover;
+  position: relative;
+  z-index: 100;
+  left: 0;
+  right: 0;
+  top: -0.6rem;
+  margin: auto;
+}
+html section.home > div:nth-child(4),
+body section.home > div:nth-child(4) {
+  position: absolute;
+  bottom: 0;
+  width: 7.5rem;
+  height: 2.22rem;
+  background: url('../images/home_bott.png') no-repeat;
+  background-size: cover;
+}
+html section.phdisplay,
+body section.phdisplay {
+  display: none;
+}
+html section.phdisplay > div:nth-child(1),
+body section.phdisplay > div:nth-child(1) {
+  width: 7.5rem;
+  height: 2.71rem;
+  background: url('../images/home_top.png') no-repeat;
+  background-size: cover;
+  position: relative;
+}
+html section.phdisplay > div:nth-child(2),
+body section.phdisplay > div:nth-child(2) {
+  position: relative;
+  z-index: 1;
+  width: 7.45rem;
+  height: 8.06rem;
+  background: url('../images/ph_01.png') no-repeat;
+  background-size: cover;
+}
+html section.phdisplay > div:nth-child(2) > div:nth-child(1),
+body section.phdisplay > div:nth-child(2) > div:nth-child(1) {
+  position: absolute;
+  width: 5rem;
+  height: 8.02rem;
+  left: 1.29rem;
+  background-size: cover;
+}
+html section.phdisplay > div:nth-child(2) > div:nth-child(1) > ul > li,
+body section.phdisplay > div:nth-child(2) > div:nth-child(1) > ul > li {
+  position: absolute;
+  z-index: 2;
+}
+html section.phdisplay > div:nth-child(2) > div:nth-child(1) > ul > li:nth-child(1),
+body section.phdisplay > div:nth-child(2) > div:nth-child(1) > ul > li:nth-child(1) {
+  top: .47rem;
+  left: .34rem;
+  width: 1.57rem;
+  height: 1.75rem;
+  background: yellow;
+  opacity: .4;
+  transform: rotate(-8deg);
+  -moz-transform: rotate(-8deg);
+  /* Firefox */
+  -webkit-transform: rotate(-8deg);
+  /* Safari and Chrome */
+  -o-transform: rotate(-8deg);
+  /* Opera */
+}
+html section.phdisplay > div:nth-child(2) > div:nth-child(1) > ul > li:nth-child(2),
+body section.phdisplay > div:nth-child(2) > div:nth-child(1) > ul > li:nth-child(2) {
+  top: .2rem;
+  left: 2.12rem;
+  width: 1.98rem;
+  height: 1.42rem;
+  background: red;
+  opacity: .2;
+  transform: rotate(-7eg);
+  -moz-transform: rotate(-7deg);
+  /* Firefox */
+  -webkit-transform: rotate(-7deg);
+  /* Safari and Chrome */
+  -o-transform: rotate(-7deg);
+  /* Opera */
+}
+html section.phdisplay > div:nth-child(2) > div:nth-child(1) > ul > li:nth-child(3),
+body section.phdisplay > div:nth-child(2) > div:nth-child(1) > ul > li:nth-child(3) {
+  top: 2.4rem;
+  left: .53rem;
+  width: 1.98rem;
+  height: 1.42rem;
+  background: green;
+  opacity: .2;
+  transform: rotate(-8eg);
+  -moz-transform: rotate(-8deg);
+  /* Firefox */
+  -webkit-transform: rotate(-8deg);
+  /* Safari and Chrome */
+  -o-transform: rotate(-8deg);
+  /* Opera */
+}
+html section.phdisplay > div:nth-child(2) > div:nth-child(1) > ul > li:nth-child(4),
+body section.phdisplay > div:nth-child(2) > div:nth-child(1) > ul > li:nth-child(4) {
+  top: 1.8rem;
+  right: .5rem;
+  width: 1.66rem;
+  height: 2.29rem;
+  background: blue;
+  opacity: .2;
+  transform: rotate(-7eg);
+  -moz-transform: rotate(-7deg);
+  /* Firefox */
+  -webkit-transform: rotate(-7deg);
+  /* Safari and Chrome */
+  -o-transform: rotate(-7deg);
+  /* Opera */
+}
+html section.phdisplay > div:nth-child(2) > div:nth-child(1) > ul > li:nth-child(5),
+body section.phdisplay > div:nth-child(2) > div:nth-child(1) > ul > li:nth-child(5) {
+  top: 4rem;
+  left: .42rem;
+  height: 1.4rem;
+  width: 2.29rem;
+  background: blueviolet;
+  opacity: .2;
+  transform: rotate(-7eg);
+  -moz-transform: rotate(-7deg);
+  /* Firefox */
+  -webkit-transform: rotate(-7deg);
+  /* Safari and Chrome */
+  -o-transform: rotate(-7deg);
+  /* Opera */
+}
+html section.phdisplay > div:nth-child(2) > div:nth-child(1) > ul > li:nth-child(6),
+body section.phdisplay > div:nth-child(2) > div:nth-child(1) > ul > li:nth-child(6) {
+  top: 4.2rem;
+  right: .2rem;
+  height: 1.6rem;
+  width: 1.8rem;
+  background: palevioletred;
+  opacity: .2;
+  transform: rotate(-7eg);
+  -moz-transform: rotate(-7deg);
+  /* Firefox */
+  -webkit-transform: rotate(-7deg);
+  /* Safari and Chrome */
+  -o-transform: rotate(-7deg);
+  /* Opera */
+}
+html section.phdisplay > div:nth-child(2) > div:nth-child(1) > ul > li:nth-child(7),
+body section.phdisplay > div:nth-child(2) > div:nth-child(1) > ul > li:nth-child(7) {
+  top: 5.7rem;
+  left: .48rem;
+  width: 1.53rem;
+  height: 2.09rem;
+  background: #f35e23;
+  opacity: .2;
+  transform: rotate(-7eg);
+  -moz-transform: rotate(-7deg);
+  /* Firefox */
+  -webkit-transform: rotate(-7deg);
+  /* Safari and Chrome */
+  -o-transform: rotate(-7deg);
+  /* Opera */
+}
+html section.phdisplay > div:nth-child(2) > div:nth-child(1) > ul > li:nth-child(8),
+body section.phdisplay > div:nth-child(2) > div:nth-child(1) > ul > li:nth-child(8) {
+  top: 6rem;
+  left: 2.4rem;
+  width: 1.4rem;
+  height: 1.4rem;
+  background: #1b1816;
+  opacity: .2;
+  transform: rotate(-7eg);
+  -moz-transform: rotate(-7deg);
+  /* Firefox */
+  -webkit-transform: rotate(-7deg);
+  /* Safari and Chrome */
+  -o-transform: rotate(-7deg);
+  /* Opera */
+}
+html section.phdisplay > div:nth-child(2) > div:nth-child(1) > ul > li:nth-child(9),
+body section.phdisplay > div:nth-child(2) > div:nth-child(1) > ul > li:nth-child(9) {
+  top: 6rem;
+  right: 0;
+  width: 1rem;
+  height: 1.4rem;
+  background: #9989da;
+  transform: rotate(-7eg);
+  -moz-transform: rotate(-7deg);
+  /* Firefox */
+  -webkit-transform: rotate(-7deg);
+  /* Safari and Chrome */
+  -o-transform: rotate(-7deg);
+  /* Opera */
+}
+html section.phdisplay > div:nth-child(2) > div:nth-child(2),
+body section.phdisplay > div:nth-child(2) > div:nth-child(2) {
+  position: absolute;
+  left: 0;
+  top: 5.5rem;
+  width: 1.63rem;
+  height: 2.1rem;
+  background: url('../images/home_left.png') no-repeat;
+  background-size: cover;
+}
+html section.phdisplay > div:nth-child(2) > div:nth-child(3),
+body section.phdisplay > div:nth-child(2) > div:nth-child(3) {
+  position: absolute;
+  right: 0;
+  top: 4rem;
+  width: .91rem;
+  height: 1.44rem;
+  background: url('../images/home_rig.png') no-repeat;
+  background-size: cover;
+}
+html section.phdisplay > div:nth-child(3),
+body section.phdisplay > div:nth-child(3) {
+  width: 4.26rem;
+  height: 1.18rem;
+  background: url('../images/palymemories.png') no-repeat;
+  background-size: cover;
+  position: relative;
+  z-index: 100;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+html section.phdisplay > div:nth-child(4),
+body section.phdisplay > div:nth-child(4) {
+  position: absolute;
+  bottom: 0;
+  width: 7.5rem;
+  height: 2.22rem;
+  background: url('../images/home_bott.png') no-repeat;
+  background-size: cover;
+}
+html section.list,
+body section.list {
+  display: none;
+}
+html section.list > div:nth-child(2),
+body section.list > div:nth-child(2) {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 100;
+}
+html section.tc,
+body section.tc {
+  position: fixed;
+  top: 1.8rem;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 300;
+}
+html section.tc.tc_01,
+body section.tc.tc_01 {
+  display: none;
+  width: 5.16rem;
+  height: 6.81rem;
+  background: url('../images/tc_bg.png') no-repeat;
+  background-size: cover;
+  margin: 0 auto;
+}
+html section.tc.tc_01 > div:nth-child(1),
+body section.tc.tc_01 > div:nth-child(1) {
+  position: absolute;
+  top: .84rem;
+  left: .4rem;
+  width: 3.98rem;
+  height: 4.87rem;
+  box-sizing: border-box;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  color: #6d5744;
+}
+html section.tc.tc_01 > div:nth-child(1) > div:nth-child(1),
+body section.tc.tc_01 > div:nth-child(1) > div:nth-child(1) {
+  width: 3.54rem;
+  height: .34rem;
+  background: url('../images/tc_01.png') no-repeat;
+  background-size: cover;
+  margin: 0 auto;
+}
+html section.tc.tc_01 > div:nth-child(1) > div:nth-child(2),
+body section.tc.tc_01 > div:nth-child(1) > div:nth-child(2) {
+  font-size: .3rem;
+  margin: .69rem auto .38rem;
+}
+html section.tc.tc_01 > div:nth-child(1) > div:nth-child(2) > p > span,
+body section.tc.tc_01 > div:nth-child(1) > div:nth-child(2) > p > span {
+  color: #f35504;
+}
+html section.tc.tc_01 > div:nth-child(1) > div:nth-child(3),
+body section.tc.tc_01 > div:nth-child(1) > div:nth-child(3) {
+  font-size: .24rem;
+}
+html section.tc.tc_01 > div:nth-child(2),
+body section.tc.tc_01 > div:nth-child(2) {
+  position: absolute;
+  bottom: .2rem;
+  left: .53rem;
+  display: flex;
+  justify-content: space-between;
+  width: 3.66rem;
+}
+html section.tc.tc_01 > div:nth-child(2) > a,
+body section.tc.tc_01 > div:nth-child(2) > a {
+  display: inline-block;
+}
+html section.tc.tc_01 > div:nth-child(2) > a:nth-child(1),
+body section.tc.tc_01 > div:nth-child(2) > a:nth-child(1) {
+  width: 1.76rem;
+  height: .71rem;
+  background: url('../images/tc_xg.png') no-repeat;
+  background-size: cover;
+}
+html section.tc.tc_01 > div:nth-child(2) > a:nth-child(2),
+body section.tc.tc_01 > div:nth-child(2) > a:nth-child(2) {
+  width: 1.76rem;
+  height: .71rem;
+  background: url('../images/tc_xsure.png') no-repeat;
+  background-size: cover;
+}
+html section.tc.tc_02,
+body section.tc.tc_02 {
+  display: none;
+  width: 5.16rem;
+  height: 6.81rem;
+  background: url('../images/tc_bg.png') no-repeat;
+  background-size: cover;
+  margin: 0 auto;
+}
+html section.tc.tc_02 > div,
+body section.tc.tc_02 > div {
+  position: absolute;
+  top: .84rem;
+  left: .4rem;
+  width: 3.98rem;
+  height: 4.87rem;
+  padding-top: .62rem;
+  box-sizing: border-box;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: space-between;
+  color: #6d5744;
+}
+html section.tc.tc_02 > div > div:nth-child(1),
+body section.tc.tc_02 > div > div:nth-child(1) {
+  font-size: .3rem;
+}
+html section.tc.tc_02 > div > div:nth-child(1) > p > span,
+body section.tc.tc_02 > div > div:nth-child(1) > p > span {
+  color: #f35504;
+}
+html section.tc.tc_02 > div > div:nth-child(2),
+body section.tc.tc_02 > div > div:nth-child(2) {
+  font-size: .24rem;
+}
+html section.tc.tc_02 > div > a,
+body section.tc.tc_02 > div > a {
+  display: inline-block;
+  width: 3.95rem;
+  height: 1.09rem;
+  background-color: #5656f1;
+}
+html section.tc.tc_02 > a,
+body section.tc.tc_02 > a {
+  display: inline-block;
+  width: 2.24rem;
+  height: .71rem;
+  background: url('../images/tc_sure.png') no-repeat;
+  background-size: cover;
+  position: absolute;
+  bottom: .2rem;
+  left: 1.3rem;
+}
+html section.mask,
+body section.mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 100;
+}

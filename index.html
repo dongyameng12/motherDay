@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>北京移动</title>
+    <link rel="stylesheet" href="css/reset.min.css">
+    <!-- <link rel="stylesheet/less" href="css/styles.less"> -->
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- <script src="js/less-1.7.0.min.js"></script> -->
+    <script src="js/jquery-1.10.1.min.js"></script>
+    <script src="js/modernizr.2.5.3.min.js"></script>
+</head>
+<body>
+     <!-- 测试按钮 -->
+     <button style="position:absolute;z-index:300;top:.5rem;font-weight:bolder;" href="#" class="test2">没有关注公众号</button>
+     <button style="position:absolute;z-index:300;top:1rem;font-weight:bolder;" href="#" class="test3">没有绑定用户</button>
+     <button style="position:absolute;z-index:300;top:1.5rem;font-weight:bolder;" href="#" class="test4">再次登录</button>
+    <!-- 首页 -->
+    <section class="home">
+        <div><a href="javascript:void(0);"></a></div>
+        <div >
+            <div id="change"></div>
+            <div></div>
+            <div></div>
+        </div>
+        <!-- 开启相册 -->
+        <div id="start_memories"></div>
+        <div></div>
+    </section>
+    <!-- 照片展示 -->
+    <section class="phdisplay">
+        <div></div>
+        <div>
+            <div>
+                <ul class="ph_list">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+            <div></div>
+            <div></div>
+        </div>
+        <!-- 播放回忆 -->
+        <div id="play_memories"></div>
+        <div></div>
+    </section>
+    <!-- 回忆录 -->
+    <section class="list flipbook-viewport">
+        <div class="container">
+            <div class="flipbook">
+                <div style="background-image:url(images/01.jpg)"></div>
+                <div style="background-image:url(images/02.jpg)"></div>
+                <div style="background-image:url(images/03.jpg)"></div>
+                <div style="background-image:url(images/04.jpg)"></div>
+                <div style="background-image:url(images/05.jpg)"></div>
+                <div style="background-image:url(images/01.jpg)"></div>
+                <div style="background-image:url(images/02.jpg)"></div>
+                <div style="background-image:url(images/03.jpg)"></div>
+                <div style="background-image:url(images/04.jpg)"></div>
+            </div>
+        </div>
+        <div>
+            <button class="prev">上一页</button>
+            <button class="next">下一页</button>
+        </div>
+    </section>
+    <!-- 信息确认 -->
+    <section class="tc tc_01">
+        <div>
+            <div></div>
+            <div>
+                <p>您是否将<span> 50</span><span>MB</span> 全国流量 </p>
+                <p>转赠到手机号码</p>
+                <p>13800000000 </p>
+                <p>的账户中？</p>
+            </div>
+            <div>
+                <p>点击确认后，信息将不可更改。</p>
+            </div>
+        </div>
+        <div>
+            <a href="javascript:void(0);" id="modify"></a>
+            <a href="javascript:void(0);" id="givebtn_01"></a>
+        </div>
+    </section>
+    <!-- 温馨提示 -->
+    <section class="tc tc_02">
+        <div>
+            <div>
+                <p>您已将<span> 50</span> <span>MB</span> 全国流量 </p>
+                <p>转赠到手机号码</p>
+                <p>13800000000 </p>
+                <p>的账户中。</p>
+            </div>
+            <div>
+                <p>流量将于15日内到账，</p>
+                <p> 有效期7天</p>
+                <p>(流量到账后，立即生效)</p>
+            </div>
+            <a href="javascript:void(0);"></a>
+        </div>
+        <a href="javascript:void(0);" id="givebtn_02"></a>
+    </section>
+    <!-- 遮罩层 -->
+    <section class="mask" id="mask"></section>
+</body>
+</html>
+<script src="js/index.js"></script>
