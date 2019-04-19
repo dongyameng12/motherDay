@@ -32,6 +32,76 @@ $(document).ready(function () {
         }
     })()
 
+    // 背景音乐和声音的处理start
+    var music = document.getElementById('music'),
+        ms1 = document.getElementById('ms1'),
+        ms2 = document.getElementById('ms2'),
+        ms3 = document.getElementById('ms3'),
+        ms4 = document.getElementById('ms4'),
+        ms5 = document.getElementById('ms5');
+    music.load();
+    ms1.load();
+    ms2.load();
+    ms3.load();
+    ms4.load();
+    ms5.load();
+    music.pause();
+    //bgMusic
+    wx.config({
+    });
+    wx.ready(function () {
+        function audioAutoPlay(id){
+            var audio = document.getElementById(id),
+                play = function(){
+                    audio.play();
+                    audio.pause();
+                    document.removeEventListener("touchstart",play, false);
+                };
+            audio.play();
+            audio.pause();
+            document.addEventListener("WeixinJSBridgeReady", function () {
+                play();
+                music.play();
+            }, false);
+            document.addEventListener('YixinJSBridgeReady', function() {
+                play();
+                music.play();
+            }, false);
+            document.addEventListener("touchstart",play, false);
+        }
+        music.pause()
+        audioAutoPlay('ms1');
+        audioAutoPlay('ms2');
+        audioAutoPlay('ms3');
+        audioAutoPlay('ms4');
+        audioAutoPlay('ms5');
+    });
+    ~function () {
+        var musicMenu = document.getElementById('musicMenu'),
+            musicAudio = document.getElementById('music');
+
+        musicMenu.addEventListener('click', function () {
+            if (musicAudio.paused) {//->暂停
+                musicAudio.play();
+                musicMenu.className = 'music move';
+                return;
+            }
+            musicAudio.pause();
+            musicMenu.className = 'music';
+        }, false);
+
+        function controlMusic() {
+            musicAudio.volume = 0.5;
+            musicAudio.pause();
+            musicAudio.addEventListener('canplay', function () {
+                musicMenu.style.display = 'block';
+                musicMenu.className = 'music move';
+            }, false);
+        }
+        window.setTimeout(controlMusic, 1000);
+    }();
+    // 背景音乐和声音的处理end
+
     // 翻页turn
     // 初始化turn容器
     function init_turn() {
@@ -146,39 +216,6 @@ $(document).ready(function () {
                 
             }
         })
-        // var curr_page = $(".flipbook").turn("page")
-        // debugger
-        // switch (curr_page) {
-        //     case 1:
-        //         console.log('1')
-        //         break;
-        //     case 2:
-        //         console.log('2');
-        //         break;
-        //     case 3:
-        //         console.log('3')
-        //         break;
-        //     case 4:
-        //         console.log('4');
-        //         break;
-        //     case 5:
-        //         console.log('5')
-        //         break;
-        //     case 6:
-        //         console.log('6');
-        //         break;
-        //     case 7:
-        //         console.log('7')
-        //         break;
-        //     case 8:
-        //         console.log('8');
-        //         break;
-        //     case 9:
-        //         // $('.list').hide()
-        //         // $('.end').show()
-        //         console.log('9');
-        //         break;
-        // }
     }
     // 跳转到指定页面
     function jumpPage(index) {
@@ -186,6 +223,8 @@ $(document).ready(function () {
         currPage();
     }
     // 翻页end
+    
+
 
     // 首页翻书
     count_number = 0
@@ -208,6 +247,8 @@ $(document).ready(function () {
                         $('.home').hide();
                         if (firstLoading) {
                             againEnter()
+                        }else{
+                            $('#play_memories').addClass('bScale');
                         }
                         $('.phdisplay').show();
                     },800)
@@ -221,12 +262,6 @@ $(document).ready(function () {
     // 开启回忆
     $('#start_memories').on('click', function () {
         flipbook ();
-        // setTimeout(function(){
-        //     $('.home').hide();
-        //     $('.phdisplay').show();
-        // },3000)
-        // $('.home').hide();
-        // $('.phdisplay').show();
     });
     //照片展示(播放回忆) 
     $('#play_memories').on('click', function () {
@@ -236,6 +271,7 @@ $(document).ready(function () {
         }else{
           $('#return').show();
         }
+        playMusic ();
         $('.list').show();
         currPage();
     })
@@ -245,11 +281,15 @@ $(document).ready(function () {
             $(this).click(function() {
                 var ph_index = $(this).index();
                 $('.phdisplay').hide();
+                $('#return').show();
+                playMusic ();
                 $('.list').show();
                 jumpPage(ph_index+1);
             })
         });
     }
+
+    
     // 回忆录中的上一页和下一页
     $('.prev').on('click',function(){
         pre_page();
@@ -257,6 +297,23 @@ $(document).ready(function () {
     $('.next').on('click',function(){
         next_page();
     })
+    // 结束页
+    // 送她520MB
+    $('#givebtn').on('click',function(){
+        jiangli();
+    });
+    // 点击再看相册
+    $('#again_look').on('click',function(){
+        $('.end').hide();
+        $('#change').css('background-image', 'url(./images/homex_01.png)');
+        // 重置首页
+        count_number = 0;
+        // 重置第一个场景
+        $(".flipbook").turn("page",1);
+        // 重置音乐
+        pauseMusic ();
+        $('.home').show();
+    });
     // 判断关注，绑定等
     function jiangli() {
         if (attention) {
@@ -313,12 +370,32 @@ $(document).ready(function () {
         return rtn;
     }
     // 测试
+    // 没有关注
+    $('.test2').on('click',function(){
+        attention = false;
+    });
+      // 没有关注
+    $('.test3').on('click',function(){
+        binding = false;    
+    });
     // 再次登录
     $('.test4').on('click',function(){
         localStorage.clear()
         window.location.reload()
     });
 });
+function playMusic (){
+    // 播放
+    $('#musicMenu').addClass('move');
+    $('#musicMenu').show();
+    music.play();
+}
+function pauseMusic (){
+    // 暂停
+    $('#musicMenu').removeClass('move');
+    $('#musicMenu').hide();
+    music.pause();
+}
 //显示遮罩层
 function showMask() {
     $("#mask").css("height", $(document).height());

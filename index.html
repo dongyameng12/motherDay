@@ -14,12 +14,42 @@
     <script src="js/jquery-1.10.1.min.js"></script>
     <script src="js/modernizr.2.5.3.min.js"></script>
     <script src="js/preLoader.js"></script>
+    <script src="js/jweixin-1.0.0.js"></script>
     <script>
         preLoader([
+          './images/01.jpg',
+          './images/02.jpg',
+          './images/03.jpg',
+          './images/04.jpg',
+          './images/05.jpg',
+          './images/all_btn.png',
+          './images/end_01.png',
+          './images/end_02.png',
+          './images/end_03.png',
+          './images/end_bg.png',
+          './images/end_bott.png',
+          './images/end_btn.png',
+          './images/end_look.png',
+          './images/home_bott.png',
+          './images/home_left.png',
+          './images/home_rig.png',
+          './images/home_top.png',
           './images/homex_01.png',
           './images/homex_02.png',
           './images/homex_03.png',
-          './images/homex_04.png'
+          './images/homex_04.png',
+          './images/loading.gif',
+          './images/palymemories.png',
+          './images/ph_01.png',
+          './images/ph_album.png',
+          './images/phdisplay_top.png',
+          './images/rule.png',
+          './images/startx.png',
+          './images/tc_01.png',
+          './images/tc_bg.png',
+          './images/tc_sure.png',
+          './images/tc_xg.png',
+          './images/tc_xsure.png'
        ],function (percentage) {
            var percentT = percentage * 100;
            $('#loader_info').html((parseInt(percentT)) + '%');
@@ -44,6 +74,18 @@
         </div>
         <p>努力加载中...</p>
         <p id="loader_info"></p>
+    </section>
+    <!-- 背景音乐 -->
+    <section class="music" id="musicMenu">
+        <audio  src="audio/music.mp3" preload="none" loop id="music"></audio>
+    </section>
+    <!-- 场景声音 -->
+    <section>
+        <audio src="audio/ms1.mp3" loop id="ms1"></audio>
+        <audio src="audio/ms2.mp3" id="ms2"></audio>
+        <audio src="audio/ms3.wav" id="ms3"></audio>
+        <audio src="audio/ms4.wav" id="ms4"></audio>
+        <audio src="audio/ms5.wav" id="ms5"></audio>
     </section>
      <!-- 首页 -->
     <section class="home">
@@ -86,13 +128,13 @@
             <div class="flipbook">
                 <div style="background-image:url(images/01.jpg)">1</div>
                 <div style="background-image:url(images/02.jpg)">2</div>
-                <div style="background-image:url(images/03.jpg)">32</div>
+                <div style="background-image:url(images/03.jpg)">3</div>
                 <div style="background-image:url(images/04.jpg)">4</div>
                 <div style="background-image:url(images/05.jpg)">5</div>
                 <div style="background-image:url(images/01.jpg)">6</div>
                 <div style="background-image:url(images/02.jpg)">7</div>
                 <div style="background-image:url(images/03.jpg)">8</div>
-                <div style="background-color:#000;opacity:.5;"></div>
+                <div style="background-color:#000;opacity:.5;">9</div>
             </div>
         </div>
         <div id="return">
@@ -103,10 +145,10 @@
     <!-- 结束页 -->
     <section class="end">
         <div>
-            <a href="javascript:void(0)"></a>
+            <a href="javascript:void(0)" id="again_look"></a>
             <div>
                 <input id="inputTel" type="number" pattern="[0-9]*" oninput="if(value.length>11)value=value.slice(0,11)" placeholder="请输入手机号码">
-                <a href="javascript:void(0);"></a>
+                <a href="javascript:void(0);" id="givebtn"></a>
             </div>
         </div>
         <div>

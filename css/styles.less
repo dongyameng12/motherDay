@@ -7,7 +7,7 @@ html,body{
     height: 100%;
     // 首页
     section.home{
-        // display: none;
+        display: none;
         >div{
             &:nth-child(1){
                 width: 7.5rem;
@@ -15,6 +15,7 @@ html,body{
                 background: url('../images/home_top.png') no-repeat;
                 background-size: cover;
                 position: relative;
+                z-index: 1;
                 >a{
                     display: inline-block;
                     position: absolute;
@@ -28,12 +29,12 @@ html,body{
             }
             &:nth-child(2){
                 position: relative;
-                z-index: 1;
-                top: -.6rem;
+                // z-index: 1;
+                top: -.87rem;
                 >div{
                     &:nth-child(1){
                         width:7.5rem;
-                        height:8.88rem;
+                        height:8.65rem;
                         background: url('../images/homex_01.png') no-repeat;
                         background-size: cover;
                     }
@@ -68,11 +69,11 @@ html,body{
                 z-index: 100;
                 left: 0;
                 right: 0;
-                top: -.6rem;
+                top: -.87rem;
                 margin: auto;
             }
             &:nth-child(4){
-                position: absolute;
+                position: fixed;
                 bottom: 0;
                 width:  7.5rem;
                 height:2.22rem;
@@ -88,16 +89,17 @@ html,body{
         >div{
             &:nth-child(1){
                 width: 7.5rem;
-                height: 2.71rem;
-                background: url('../images/home_top.png') no-repeat;
+                height: 2.62rem;
+                background: url('../images/phdisplay_top.png') no-repeat;
                 background-size: cover;
                 position: relative;
             }
             &:nth-child(2){
                 position: relative;
                 z-index: 1;
-                width:7.45rem;
-                height:8.06rem;
+                top: -.17rem;
+                width:7.5rem;
+                height:8.05rem;
                 background: url('../images/ph_01.png') no-repeat;
                 background-size: cover;
                 >div{
@@ -247,8 +249,12 @@ html,body{
                 z-index: 100;
                 left: 0;
                 right: 0;
-                // top: -.6rem;
+                top: -.17rem;
                 margin: auto;
+                &.bScale{
+                    -webkit-animation: btnScale 1s linear 0s infinite both;
+                    animation: btnScale 1s linear 0s infinite both; 
+                }
             }
             &:nth-child(4){
                 position: absolute;
@@ -357,6 +363,7 @@ html,body{
                     top: .22rem;
                     left: 0;
                     margin: auto;
+                    z-index: 100;
                     width:1.6rem;
                     height: .82rem;
                     background: url('../images/end_look.png') no-repeat;
@@ -375,7 +382,7 @@ html,body{
                     right: 0;
                     margin: auto;
                     width: 6.84rem;
-                    height: 4.66rem;
+                    height: 4.64rem;
                     z-index: 2;
                     >div{
                         &:nth-child(1){
@@ -407,7 +414,7 @@ html,body{
                             background-color: #fff;
                             padding: .17rem;
                             box-sizing: border-box;
-                            margin: .06rem auto 0;
+                            margin:0 auto;
                             >a{
                                 display: inline-block;
                                 width: 100%;
@@ -569,13 +576,19 @@ html,body{
         text-align: center;
     }    
     #inputTel:-moz-placeholder{
-        color: red;
+        font-size: .3rem;
+        color: #fff;
+        text-align: center;
     }                
     #inputTel::-moz-placeholder{
-        color: red;
+        font-size: .3rem;
+        color: #fff;
+        text-align: center;
     }               
     #inputTel:-ms-input-placeholder{
-        color: red;
+        font-size: .3rem;
+        color: #fff;
+        text-align: center;
     }
 // 加载的样式
 #loader{
@@ -583,7 +596,10 @@ html,body{
     padding-top: 5rem;
     width: 7.5rem;
     height: 100%;
-    background: -webkit-radial-gradient(#5483da,#4a7bd5,#3066b8);
+    background: -webkit-radial-gradient(circle, #efcea5, #f1bb7f); /* Safari 5.1 - 6.0 */
+    background: -o-radial-gradient(circle,   #efcea5, #f1bb7f); /* Opera 11.6 - 12.0 */
+    background: -moz-radial-gradient(circle,  #efcea5, #f1bb7f); /* Firefox 3.6 - 15 */
+    background: radial-gradient(circle,   #efcea5, #f1bb7f); /* 标准的语法 */
     div{
       margin: 0 auto .3rem;
       width: 2.14rem;
@@ -610,5 +626,70 @@ html,body{
             z-index: 100;
         }
 }
+// 旋转的音乐
+.music {
+    display: none;
+    position: fixed;
+    top: .2rem;
+    left: .2rem;
+    z-index: 50;
+    width: .6rem;
+    height: .6rem;
+    background: url("../audio/music.svg") no-repeat;
+    background-size: cover;
+}
+.music.move {
+    -webkit-animation: musicMove 1s linear 0s infinite both;
+    animation: musicMove 1s linear 0s infinite both;
+}
+@-webkit-keyframes musicMove {
+    0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+}
+@keyframes musicMove {
+    0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+}
 
+// 缩放
+@-webkit-keyframes btnScale {
+    0% {
+      -webkit-transform:  scale(1);
+      transform:  scale(1);
+    }
+    50%{
+        -webkit-transform:  scale(.5);
+        transform:  scale(.5);
+    }
+    100% {
+        -webkit-transform:  scale(1);
+        transform:  scale(1);
+    }
+}
+@keyframes musicMove {
+    0% {
+        -webkit-transform:  scale(1);
+        transform:  scale(1);
+      }
+      50%{
+          -webkit-transform:  scale(.5);
+          transform:  scale(.5);
+      }
+      100% {
+          -webkit-transform:  scale(1);
+          transform:  scale(1);
+      }
+}
              
