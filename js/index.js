@@ -27,6 +27,7 @@ $(document).ready(function () {
         var first_login = localStorage.getItem('firstLoading')
         if (first_login == null) {
             localStorage.setItem('firstLoading',true)
+            $('#return').hide()
         } else {
             firstLoading = true
         }
@@ -108,8 +109,6 @@ $(document).ready(function () {
         function loadApp() {
             var w = $(window).width();
             var h = $(window).height();
-            // var w =265;
-            // var h =351.5;
             // var h =300;
             //判断是否是移动端
             if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
@@ -177,31 +176,32 @@ $(document).ready(function () {
     //上一页
     function pre_page() {
         $('.flipbook').turn("previous");
-        var curr_page_pre = $(".flipbook").turn("page")
-        if (curr_page_pre == 1) {
+        if ($(".flipbook").turn("animating")) {
+            currPage();
+        } else {
+            pauseMusic()
             $('.list').hide()
             $('.phdisplay').show()
-        } else {
-            currPage();
         }
     }
     // 下一页
     function next_page() {
-        var curr_page = $(".flipbook").turn("page")
-        if (curr_page == 9 && firstLoading) {
+        $('.flipbook').turn("next");
+        if ($(".flipbook").turn("animating")) {
+            currPage()
+        } else {
+            pauseMusic()
             $('.list').hide()
             $('.end').show()
-        } else {
-            $('.flipbook').turn("next");
         }
-        currPage()
     };
     
     // 当前页内容的效果
     function currPage() {
         $(".flipbook").bind("turned",function(event,page,view){
             if (page == 1) {
-                
+                // $('.list').hide()
+                // $('.phdisplay').show()
             }
             if (page == 9) {
                 if (firstLoading) {
@@ -209,6 +209,7 @@ $(document).ready(function () {
                     // $('.end').show()
                 } else {
                     setTimeout(function(){
+                        pauseMusic()
                         $('.list').hide()
                         $('.end').show()
                     },2000)
@@ -246,6 +247,7 @@ $(document).ready(function () {
                     setTimeout(function(){
                         $('.home').hide();
                         if (firstLoading) {
+                            $('#play_memories').removeClass('bScale');
                             againEnter()
                         }else{
                             $('#play_memories').addClass('bScale');
@@ -300,10 +302,18 @@ $(document).ready(function () {
     // 结束页
     // 送她520MB
     $('#givebtn').on('click',function(){
-        jiangli();
+        var input_val = $('#inputTel').val();
+        if (istel(input_val)) {
+            $('.phone_text').text(input_val);
+            jiangli();
+        } else {
+           alert('请输入正确的北京移动号'); 
+        }
     });
+ 
     // 点击再看相册
     $('#again_look').on('click',function(){
+        firstLoading = localStorage.getItem('firstLoading')
         $('.end').hide();
         $('#change').css('background-image', 'url(./images/homex_01.png)');
         // 重置首页
@@ -392,8 +402,8 @@ function playMusic (){
 }
 function pauseMusic (){
     // 暂停
-    $('#musicMenu').removeClass('move');
     $('#musicMenu').hide();
+    $('#musicMenu').removeClass('move');
     music.pause();
 }
 //显示遮罩层
@@ -408,3 +418,4 @@ function hideMask() {
     $("#mask").hide();
     $('body').css('position', 'unset');
 }
+

@@ -306,23 +306,42 @@ body section.list {
   color: #fff;
   text-align: center;
 }
-html section.list > div:nth-child(2),
-body section.list > div:nth-child(2) {
-  display: none;
+html section.list > div:nth-child(1),
+body section.list > div:nth-child(1) {
   position: absolute;
-  top: 0;
-  right: 0;
-  z-index: 100;
 }
-html section.list > div:nth-child(2) > button,
-body section.list > div:nth-child(2) > button {
-  width: 1.79rem;
+html section.list > div:nth-child(2) > a,
+body section.list > div:nth-child(2) > a {
+  display: inline-block;
+}
+html section.list > div:nth-child(2) > a:nth-child(1),
+body section.list > div:nth-child(2) > a:nth-child(1) {
+  position: absolute;
+  left: 0;
+  top: .2rem;
+  z-index: 100;
+  width: 1.6rem;
   height: .82rem;
   background: url('../images/all_btn.png') no-repeat;
   background-size: cover;
   color: #fff;
   font-size: .3rem;
-  border: 0;
+  line-height: .63rem;
+}
+html section.list > div:nth-child(2) > a:nth-child(2),
+body section.list > div:nth-child(2) > a:nth-child(2) {
+  position: absolute;
+  right: 0;
+  bottom: .66rem;
+  z-index: 100;
+  color: #fff;
+  font-size: .4rem;
+  border: solid 3px #fff;
+  border-right: 0;
+  border-top-left-radius: .2rem;
+  border-bottom-left-radius: .2rem;
+  padding: .08rem .26rem;
+  text-shadow: 1px 1px 5px #ca8963;
 }
 html section.end,
 body section.end {
@@ -661,7 +680,7 @@ body section.mask {
   display: none;
   position: fixed;
   top: .2rem;
-  left: .2rem;
+  right: .2rem;
   z-index: 50;
   width: .6rem;
   height: .6rem;
@@ -719,4 +738,44 @@ body section.mask {
     -webkit-transform: scale(1);
     transform: scale(1);
   }
+}
+.page {
+  background: -webkit-radial-gradient(circle, #efcea5, #f1bb7f);
+  /* Safari 5.1 - 6.0 */
+  background: -o-radial-gradient(circle, #efcea5, #f1bb7f);
+  /* Opera 11.6 - 12.0 */
+  background: -moz-radial-gradient(circle, #efcea5, #f1bb7f);
+  /* Firefox 3.6 - 15 */
+  background: radial-gradient(circle, #efcea5, #f1bb7f);
+  /* 标准的语法 */
+}
+.p1 > div:nth-child(1),
+.p2 > div:nth-child(1),
+.p3 > div:nth-child(1),
+.p4 > div:nth-child(1),
+.p5 > div:nth-child(1),
+.p6 > div:nth-child(1),
+.p7 > div:nth-child(1),
+.p8 > div:nth-child(1),
+.p9 > div:nth-child(1) {
+  width: 7.5rem;
+  height: 10.14rem;
+  background: url('../images/02.png') no-repeat;
+  background-size: cover;
+}
+.p1 > div:nth-child(2),
+.p2 > div:nth-child(2),
+.p3 > div:nth-child(2),
+.p4 > div:nth-child(2),
+.p5 > div:nth-child(2),
+.p6 > div:nth-child(2),
+.p7 > div:nth-child(2),
+.p8 > div:nth-child(2),
+.p9 > div:nth-child(2) {
+  position: fixed;
+  bottom: 0;
+  width: 7.5rem;
+  height: 2.22rem;
+  background: url(../images/home_bott.png) no-repeat;
+  background-size: cover;
 }
