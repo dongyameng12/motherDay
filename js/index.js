@@ -391,7 +391,7 @@ $(document).ready(function () {
     // 再次登录
     $('.test4').on('click',function(){
         localStorage.clear()
-        window.location.reload()
+        window.location.href="index.html?time="+((new Date()).getTime());
     });
 });
 function playMusic (){
