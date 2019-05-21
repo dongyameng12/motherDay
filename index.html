@@ -17,6 +17,7 @@
     <script src="js/jweixin-1.0.0.js"></script>
     <script>
         preLoader([
+            './images/02.png',
             './images/all_btn.png',
             './images/end_01.png',
             './images/end_02.png',
@@ -39,6 +40,7 @@
             './images/ph_album.png',
             './images/phdisplay_top.png',
             './images/rule.png',
+            './images/scenes_top.png',
             './images/startx.png',
             './images/tc_01.png',
             './images/tc_bg.png',
@@ -52,6 +54,8 @@
                 setTimeout(function () {
                     $('#loader').remove();
                     $('.home').show();
+                    $('#musicMenu').addClass('move').show();
+                    music.play();
                 }, 1000);
             }
         });
@@ -73,7 +77,7 @@
     </section>
     <!-- 背景音乐 -->
     <section class="music" id="musicMenu">
-        <audio src="audio/music.mp3" preload="none" loop id="music"></audio>
+        <audio src="audio/music.mp3" preload="none" loop id="music" autoplay=false></audio>
     </section>
     <!-- 场景声音 -->
     <section>

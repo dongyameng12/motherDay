@@ -46,7 +46,8 @@ $(document).ready(function () {
     ms3.load();
     ms4.load();
     ms5.load();
-    music.pause();
+    // music.play();
+    // music.pause();
     //bgMusic
     wx.config({
     });
@@ -70,7 +71,7 @@ $(document).ready(function () {
             }, false);
             document.addEventListener("touchstart",play, false);
         }
-        music.pause()
+        // music.pause()
         audioAutoPlay('ms1');
         audioAutoPlay('ms2');
         audioAutoPlay('ms3');
@@ -93,7 +94,7 @@ $(document).ready(function () {
 
         function controlMusic() {
             musicAudio.volume = 0.5;
-            musicAudio.pause();
+            // musicAudio.pause();
             musicAudio.addEventListener('canplay', function () {
                 musicMenu.style.display = 'block';
                 musicMenu.className = 'music move';
@@ -179,7 +180,7 @@ $(document).ready(function () {
         if ($(".flipbook").turn("animating")) {
             currPage();
         } else {
-            pauseMusic()
+            // pauseMusic()
             $('.list').hide()
             $('.phdisplay').show()
         }
@@ -190,7 +191,7 @@ $(document).ready(function () {
         if ($(".flipbook").turn("animating")) {
             currPage()
         } else {
-            pauseMusic()
+            // pauseMusic()
             $('.list').hide()
             $('.end').show()
         }
@@ -200,16 +201,12 @@ $(document).ready(function () {
     function currPage() {
         $(".flipbook").bind("turned",function(event,page,view){
             if (page == 1) {
-                // $('.list').hide()
-                // $('.phdisplay').show()
             }
             if (page == 9) {
                 if (firstLoading) {
-                    // $('.list').hide()
-                    // $('.end').show()
                 } else {
                     setTimeout(function(){
-                        pauseMusic()
+                        // pauseMusic()
                         $('.list').hide()
                         $('.end').show()
                     },2000)
@@ -247,10 +244,10 @@ $(document).ready(function () {
                     setTimeout(function(){
                         $('.home').hide();
                         if (firstLoading) {
-                            $('#play_memories').removeClass('bScale');
+                            // $('#play_memories').removeClass('bScale');
                             againEnter()
                         }else{
-                            $('#play_memories').addClass('bScale');
+                            // $('#play_memories').addClass('bScale');
                         }
                         $('.phdisplay').show();
                     },800)
@@ -321,7 +318,7 @@ $(document).ready(function () {
         // 重置第一个场景
         $(".flipbook").turn("page",1);
         // 重置音乐
-        pauseMusic ();
+        // pauseMusic ();
         $('.home').show();
     });
     // 判断关注，绑定等
@@ -388,7 +385,7 @@ $(document).ready(function () {
     $('.test3').on('click',function(){
         binding = false;    
     });
-    // 再次登录
+    // 恢复首次登录
     $('.test4').on('click',function(){
         localStorage.clear()
         window.location.href="index.html?time="+((new Date()).getTime());
